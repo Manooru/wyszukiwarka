@@ -20,7 +20,6 @@ public class DatabaseSearch {
                 Connection conn = null;
                 PreparedStatement pstmt = null;
                 ResultSet rs = null;
-
                 try {
                     //ustawienie nazwy dla połączenia
                     Class.forName("com.mysql.cj.jdbc.Driver");
