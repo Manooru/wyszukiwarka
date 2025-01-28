@@ -7,18 +7,18 @@ public class Index {
         int option=scanner.nextInt();
         switch(option){
             case 1:
-                searching.search();
+                searching.search(); //przejście do wyszukiwania
                 break;
             case 2:
-                System.out.println("Czy na pewno chciałbys opuścić program? 1/0");
+                System.out.println("Czy na pewno chciałbys opuścić program? 1/0"); //opuszczenie programu
                 option= scanner.nextInt();
                 if (option==1){
                     System.exit(0);
-                } else {
+                } else { //powrót do początku programu, gdy wartość nie jest 1
                     Index.index();
                 }
                 break;
-            default:
+            default: //gdy wartość jest inna, niż przewidywana
                 System.out.println("Wybrana wartość nie jest przewidzianą odpowiedzią.");
                 Index.index();
                 break;

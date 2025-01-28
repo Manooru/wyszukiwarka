@@ -13,7 +13,8 @@ public class searching {
             case 2:
                 filter.hasGenre=true;
                 Search.Search();
-                //zmiana klasy na wyszukiwanie i ustawienie globalnej zmiennej hasgenre na true
+                /*zmiana klasy na wyszukiwanie i ustawienie globalnej zmiennej hasgenre na true (oznacza to, że cały proram będzie
+                wykorzystywał zmienną pod działanie funkcji*/
                 break;
             case 3:
                 Index.index();
