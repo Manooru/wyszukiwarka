@@ -7,6 +7,7 @@ public class searching {
         int choice= scanner.nextInt();
         switch (choice){
             case 1:
+                filter.hasGenre=false;
                 Search.Search();
                 break;
                 //zmiana klasy na wyszukiwanie.
