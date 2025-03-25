@@ -1,7 +1,7 @@
 import java.util.Scanner;
 public class Search {
     public static void Search(){
-        if (filter.hasGenre=true) {
+        if (filter.hasGenre==true) {
             //przepraszam za spaghetti, które jest w wyszukiwaniu przez gatunek
             System.out.println("Proszę wybrać następujące gatunki: \n1. Akcja\n2. Komedia\n3. Romantyczne\n\nWpisz 0, aby wyjść z wybrania kategorii i przejść dalej");
             search2();

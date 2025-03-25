@@ -3,4 +3,6 @@ public class filter {
      public static boolean akcja=false;
      public static boolean komedia=false;
      public static boolean romantyczne=false;
+     public static boolean ID=false;
+     public static int idn=0;
 }

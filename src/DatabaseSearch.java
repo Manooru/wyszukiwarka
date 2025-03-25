@@ -2,20 +2,19 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class DatabaseSearch {
-    private static final String link="jdbc:mysql://localhost:3306/anime";
-    private static final String user="root";
-    private static final String password="";
-    private static final int PAGE_SIZE = 50;
+    public static final String link="jdbc:mysql://localhost:3306/anime";
+    public static final String user="root";
+    public static final String password="";
+    public static final int PAGE_SIZE = 50;
 
     public static void search() {
         Scanner scanner = new Scanner(System.in);
         int offset=0;
         boolean running=true;
-
         try (Connection conn = DriverManager.getConnection(link, user, password)) {
             while (running){
                 displayRecords(conn, offset);
-                System.out.println("Aby przejść do następnej strony, wpisz \"N\".\nAby przejść do poprzedniej strony, wpisz \"W\".\n Aby wyjść, wpisz \"Wyjście\".");
+                System.out.println("Aby przejść do następnej strony, wpisz \"N\".\nAby przejść do poprzedniej strony, wpisz \"W\".\n Aby wyjść, wpisz \"Wyjście\".\nAby wpisać ID, napisz \"ID\".");
                 String input=scanner.nextLine().trim().toLowerCase();
 
                 switch (input){
@@ -33,6 +32,11 @@ public class DatabaseSearch {
                         running=false;
                         Index.index();
                         break;
+                    case "id":
+                        filter.ID=true;
+                        System.out.println("Wpisz ID");
+                        filter.idn= scanner.nextInt();
+                        break;
                     default:
                         System.out.println("Invalid option. Try again.");
                 }
@@ -46,8 +50,13 @@ public class DatabaseSearch {
 
     private static void displayRecords(Connection conn, int offset) throws SQLException {
         String query="";
-        if (filter.hasGenre=false){
-            query="SELECT ID, Name FROM animes LIMIT ? OFFSET ?";
+        if (filter.hasGenre==false){
+            if(filter.ID==true){
+
+                query="SELECT * FROM animes WHERE ID="+filter.idn;
+            }else {
+                query = "SELECT ID, Name FROM animes LIMIT ? OFFSET ?";
+            }
         }else{
             if (filter.romantyczne==true&&filter.komedia==false&&filter.akcja==false){
                 query="SELECT ID, Name FROM animes LIMIT ? OFFSET ? WHERE Genre='romantyczne'";
