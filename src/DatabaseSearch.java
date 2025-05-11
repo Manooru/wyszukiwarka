@@ -2,9 +2,9 @@ import java.sql.*;
 import java.util.Scanner;
 
 public class DatabaseSearch {
-    public static final String link="jdbc:mysql://localhost:3306/anime";
-    public static final String user="root";
-    public static final String password="";
+    private static final String link="jdbc:mysql://localhost:3306/anime";
+    private static final String user="root";
+    private static final String password="";
     public static final int PAGE_SIZE = 50;
 
     public static void search() {
