@@ -38,7 +38,7 @@ public class DatabaseSearch {
                         filter.idn= scanner.nextInt();
                         break;
                     default:
-                        System.out.println("Invalid option. Try again.");
+                        System.out.println("Odpowiedź nie jest przewidywaną przez program. Proszę wpisać ponownie. ");
                 }
             }
         } catch (SQLException e) {
