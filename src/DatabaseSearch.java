@@ -28,7 +28,7 @@ public class DatabaseSearch {
                             System.out.println("Znajdujesz się obecnie na pierwszej stronie.");
                         }
                         break;
-                    case "wyjście":
+                    case "wyjście","wyjscie":
                         running=false;
                         Index.index();
                         break;
