@@ -13,7 +13,10 @@ public class DatabaseSearch {
         boolean running=true;
         try (Connection conn = DriverManager.getConnection(link, user, password)) {
             while (running){
-                displayRecords(conn, offset);
+                if (filter.display=true){
+                    displayRecords(conn, offset);
+                }
+                filter.display=true;
                 System.out.println("Aby przejść do następnej strony, wpisz \"N\".\nAby przejść do poprzedniej strony, wpisz \"W\".\n Aby wyjść, wpisz \"Wyjście\".\nAby wpisać ID, napisz \"ID\".");
                 String input=scanner.nextLine().trim().toLowerCase();
 
@@ -26,6 +29,7 @@ public class DatabaseSearch {
                             offset-=PAGE_SIZE;
                         }else{
                             System.out.println("Znajdujesz się obecnie na pierwszej stronie.");
+                            filter.display=false;
                         }
                         break;
                     case "wyjście","wyjscie":

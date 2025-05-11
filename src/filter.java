@@ -5,4 +5,5 @@ public class filter {
      public static boolean romantyczne=false;
      public static boolean ID=false;
      public static int idn=0;
+     public static boolean display=true;
 }
